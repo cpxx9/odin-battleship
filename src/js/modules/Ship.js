@@ -11,6 +11,9 @@ class Ship {
 
   hit() {
     this.#timesHit += 1;
+    if (this.#timesHit >= this.#length) {
+      this.#isSunk = true;
+    }
   }
 
   timesHit() {
