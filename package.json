@@ -1,11 +1,12 @@
 {
-  "name": "webpack-template",
-  "version": "1.0.0",
-  "description": "webpack template to use",
+  "name": "battleship-odin",
+  "version": "0.0.1",
+  "description": "Battleship game project for TOP to practive TDD",
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --watch ./src/JS/*.js",
     "build": "webpack --mode production --config webpack.prod.js",
+    "git": "git subtree push --prefix dist origin gh-pages",
     "dev": "webpack serve --mode development--config webpack.dev.js"
   },
   "author": "CJP Labs <prattecole@gmail.com>",
