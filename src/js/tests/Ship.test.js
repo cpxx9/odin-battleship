@@ -10,6 +10,11 @@ describe('instantiation tests', () => {
     const sh = new Ship(5);
     expect(sh.length()).toBe(5);
   });
+  test('Ship starts afloat', () => {
+    const sh = new Ship(3);
+
+    expect(sh.isSunk()).toBe(false);
+  });
 });
 
 describe('hit method tests', () => {
