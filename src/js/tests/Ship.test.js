@@ -19,4 +19,22 @@ describe('hit method tests', () => {
 
     expect(sh.timesHit()).toBe(1);
   });
+
+  test('hit method works multiple times', () => {
+    const sh = new Ship(5);
+    sh.hit();
+    sh.hit();
+    sh.hit();
+
+    expect(sh.timesHit()).toBe(3);
+  });
+
+  test('hit method works to sink Ship', () => {
+    const sh = new Ship(3);
+    sh.hit();
+    sh.hit();
+    sh.hit();
+
+    expect(sh.isSunk()).toBe(true);
+  });
 });
