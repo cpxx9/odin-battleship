@@ -1,6 +1,6 @@
 {
   "name": "battleship-odin",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Battleship game project for TOP to practive TDD",
   "main": "index.js",
   "scripts": {
