@@ -15,7 +15,10 @@ class Gameboard {
   ];
 
   placeShip(xCoord, yCoord, size) {
-    this.board[yCoord][xCoord] = new Ship(size);
+    const ship = new Ship(size);
+    for (let i = 0; i < size; i += 1) {
+      this.board[yCoord][xCoord + i] = ship;
+    }
   }
 }
 
