@@ -3,8 +3,6 @@ class Ship {
 
   #isSunk = false;
 
-  #faceUp = false;
-
   #length;
 
   constructor(size) {
@@ -28,10 +26,6 @@ class Ship {
 
   length() {
     return this.#length;
-  }
-
-  rotate() {
-    this.#faceUp = !this.#faceUp;
   }
 }
 
