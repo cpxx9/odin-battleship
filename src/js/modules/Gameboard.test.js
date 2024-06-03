@@ -43,10 +43,14 @@ describe('ship placing tests', () => {
   test('ships can be placed rotated v2', () => {
     const gb = new Gameboard();
     gb.placeShip(5, 5, 3, 'verticle');
-    console.log(gb.board);
 
     expect(gb.board[5][5]).toEqual(new Ship(3));
     expect(gb.board[6][5]).toEqual(new Ship(3));
     expect(gb.board[7][5]).toEqual(new Ship(3));
+  });
+
+  test('ships cannot be placed off the edge', () => {
+    const gb = new Gameboard();
+    expect(gb.placeShip(9, 0, 2, 'horizontal')).toBe('Invalid placement');
   });
 });
