@@ -17,6 +17,7 @@ describe('ship placing tests', () => {
   test('ships take up appropriate space', () => {
     const gb = new Gameboard();
     gb.placeShip(0, 0, 3, 'horizontal');
+    console.log(gb.board);
     expect(gb.board[0][0]).toEqual(new Ship(3));
     expect(gb.board[0][1]).toEqual(new Ship(3));
     expect(gb.board[0][2]).toEqual(new Ship(3));
@@ -32,7 +33,7 @@ describe('ship placing tests', () => {
 
   test('ships can be placed rotated', () => {
     const gb = new Gameboard();
-    gb.placeShip(0, 0, 3);
+    gb.placeShip(0, 0, 3, 'verticle');
 
     expect(gb.board[0][0]).toEqual(new Ship(3));
     expect(gb.board[1][0]).toEqual(new Ship(3));
@@ -61,19 +62,18 @@ describe('ship placing tests', () => {
 
   test('ships cannot be placed off the edge, verticle', () => {
     const gb = new Gameboard();
-    expect(gb.placeShip(0, 9, 2)).toBeFalsy();
+    expect(gb.placeShip(0, 9, 2, 'verticle')).toBeFalsy();
   });
 
   test('verticle edge more tests', () => {
     const gb = new Gameboard();
-    expect(gb.placeShip(0, 8, 2)).toBeTruthy();
-    expect(gb.placeShip(0, 8, 3)).toBeFalsy();
+    expect(gb.placeShip(0, 8, 2, 'verticle')).toBeTruthy();
+    expect(gb.placeShip(0, 8, 3, 'verticle')).toBeFalsy();
   });
 
   test('Ships cannot overlap', () => {
     const gb = new Gameboard();
-    gb.placeShip(4, 4, 3);
-    console.log(gb.board);
-    expect(gb.placeShip(4, 4, 3)).toBeFalsy();
+    gb.placeShip(4, 4, 3, 'verticle');
+    expect(gb.placeShip(4, 4, 3, 'verticle')).toBeFalsy();
   });
 });
