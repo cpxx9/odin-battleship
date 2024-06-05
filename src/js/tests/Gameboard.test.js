@@ -76,4 +76,10 @@ describe('ship placing tests', () => {
     gb.placeShip(4, 4, 3, 'verticle');
     expect(gb.placeShip(4, 4, 3, 'verticle')).toBeFalsy();
   });
+
+  test('Ships cannot overlap, more tests', () => {
+    const gb = new Gameboard();
+    gb.placeShip(4, 4, 3, 'verticle');
+    expect(gb.placeShip(3, 4, 3, 'horizontal')).toBeFalsy();
+  });
 });
