@@ -1,5 +1,9 @@
 import Ship from './Ship';
 
+function doShipsOverlap() {
+  return false;
+}
+
 class Gameboard {
   board = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -21,11 +25,15 @@ class Gameboard {
         //check to see if placement will be outside of board bounds
         if (xCoord + size > 10) {
           return false;
+        } else if (doShipsOverlap()) {
+          return false;
         }
         this.board[yCoord][xCoord + i] = ship;
       } else {
         //check to see if placement will be outside of board bounds
         if (yCoord + size > 10) {
+          return false;
+        } else if (doShipsOverlap()) {
           return false;
         }
         this.board[yCoord + i][xCoord] = ship;

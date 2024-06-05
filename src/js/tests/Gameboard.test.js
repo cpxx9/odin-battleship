@@ -1,5 +1,5 @@
-import Gameboard from './Gameboard';
-import Ship from './Ship';
+import Gameboard from '../modules/Gameboard';
+import Ship from '../modules/Ship';
 
 describe('ship placing tests', () => {
   test('place ship at 0,0 position', () => {
