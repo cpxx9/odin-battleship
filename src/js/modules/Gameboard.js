@@ -19,13 +19,13 @@ class Gameboard {
     for (let i = 0; i < size; i += 1) {
       if (rotation === 'horizontal') {
         //check to see if placement will be outside of board bounds
-        if (xCoord + size > 9) {
+        if (xCoord + size > 10) {
           return false;
         }
         this.board[yCoord][xCoord + i] = ship;
       } else {
         //check to see if placement will be outside of board bounds
-        if (yCoord + size > 9) {
+        if (yCoord + size > 10) {
           return false;
         }
         this.board[yCoord + i][xCoord] = ship;
