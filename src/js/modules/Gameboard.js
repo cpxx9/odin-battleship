@@ -14,7 +14,7 @@ class Gameboard {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
-  placeShip(xCoord, yCoord, size, rotation) {
+  placeShip(xCoord, yCoord, size, rotation = 'verticle') {
     const ship = new Ship(size);
     for (let i = 0; i < size; i += 1) {
       if (rotation === 'horizontal') {
