@@ -33,7 +33,6 @@ describe('ship placing tests', () => {
   test('ships can be placed rotated', () => {
     const gb = new Gameboard();
     gb.placeShip(0, 0, 3);
-    console.log(gb.board);
 
     expect(gb.board[0][0]).toEqual(new Ship(3));
     expect(gb.board[1][0]).toEqual(new Ship(3));
@@ -69,5 +68,12 @@ describe('ship placing tests', () => {
     const gb = new Gameboard();
     expect(gb.placeShip(0, 8, 2)).toBeTruthy();
     expect(gb.placeShip(0, 8, 3)).toBeFalsy();
+  });
+
+  test('Ships cannot overlap', () => {
+    const gb = new Gameboard();
+    gb.placeShip(4, 4, 3);
+    console.log(gb.board);
+    expect(gb.placeShip(4, 4, 3)).toBeFalsy();
   });
 });
