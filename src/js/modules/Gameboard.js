@@ -23,6 +23,7 @@ class Gameboard {
         this.board[yCoord + i][xCoord] = ship;
       }
     }
+    return true;
   }
 }
 
