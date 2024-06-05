@@ -56,7 +56,6 @@ describe('ship placing tests', () => {
 
   test('horizontal edge more tests', () => {
     const gb = new Gameboard();
-    expect(gb.placeShip(9, 0, 2, 'horizontal')).toBeFalsy();
     expect(gb.placeShip(8, 0, 2, 'horizontal')).toBeTruthy();
     expect(gb.placeShip(8, 0, 3, 'horizontal')).toBeFalsy();
   });
@@ -64,6 +63,10 @@ describe('ship placing tests', () => {
   test('ships cannot be placed off the edge, verticle', () => {
     const gb = new Gameboard();
     expect(gb.placeShip(0, 9, 2)).toBeFalsy();
+  });
+
+  test('verticle edge more tests', () => {
+    const gb = new Gameboard();
     expect(gb.placeShip(0, 8, 2)).toBeTruthy();
     expect(gb.placeShip(0, 8, 3)).toBeFalsy();
   });
